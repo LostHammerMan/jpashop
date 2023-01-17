@@ -1,0 +1,32 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  devtools:
+    livereload:
+      enabled: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jpa_basic?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: 1234
+
+# ddl-auto : DB에 자동으로 테이블 생성
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+server:
+  port: 9090
+
+
+
+logging:
+  level:
+    org.hibernate.sql: debug # jpa, hibernate 가 생성한 SQL 모든 로그 보임
+    org.hibernate.type: trace # 쿼리 파라미터
