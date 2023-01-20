@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+//@Table(name = "user") -- 테이블 이름 변경 가능(user로)
 @Getter @Setter
 public class Member {
 
@@ -24,6 +25,7 @@ public class Member {
 
     @OneToMany(mappedBy = "member") // Member 입장에서는 1:n 관계이므로 // order table의 Member의 거울(연관관계 주인 아님)
     private List<Order> orders = new ArrayList<>();
+
 
 
 }
