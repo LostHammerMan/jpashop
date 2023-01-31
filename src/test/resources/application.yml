@@ -3,7 +3,6 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-    static-path-pattern: /static/**
   devtools:
     livereload:
       enabled: true
@@ -21,18 +20,16 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-  web:
-    resources:
-      static-locations: classpath:/static/
-      add-mappings: true
 
+#server:
+#  port: 9090
 
-server:
-  port: 9090
-
-
+# 스프링부트에서 DB 설정이 없는 경우 기본적으로 메모리 모드로 실행, 단 build.gradle runtime을 h2로 사용하는 경우에만
+# mySql in-memory DB 지원하지 않음
+# test 에서 application.yml이 별도로 있는 경우 해당 yml이 우선 적용됨
+# 실제 운영 코드가 있는 package 와 별도로 존재하는 것이 좋다!!
 
 logging:
   level:
-    org.hibernate.sql: info # jpa, hibernate 가 생성한 SQL 모든 로그 보임
+    org.hibernate.sql: debug # jpa, hibernate 가 생성한 SQL 모든 로그 보임
     org.hibernate.type: trace # 쿼리 파라미터
