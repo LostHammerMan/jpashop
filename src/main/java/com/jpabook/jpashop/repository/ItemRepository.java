@@ -17,7 +17,7 @@ public class ItemRepository {
         if (item.getId() == null){
             em.persist(item); // item 신규 등록
         } else {
-            em.merge(item); // 이미 있는 경우 merge -> update 와 유사
+            em.merge(item); // 이미 있는 경우 merge -> update 와 유사, 그러나 실무에서는 거의 사용하지 않음
         }
     }
 

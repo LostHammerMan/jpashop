@@ -16,7 +16,7 @@ spring:
 # ddl-auto : DB에 자동으로 테이블 생성
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update # create 의 경우 재부팅시 데이터 초기화됨
     properties:
       hibernate:
         show_sql: true
